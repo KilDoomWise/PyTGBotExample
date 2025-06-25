@@ -5,9 +5,9 @@ from dotenv import load_dotenv
 load_dotenv()
 print("ENV Loaded!")
 
-print("BOT TOKEN: " + os.environ("BOT_TOKEN"))
+print("BOT TOKEN: " + os.getenv("BOT_TOKEN"))
 
-bot = telebot.TeleBot(os.environ("BOT_TOKEN"), parse_mode=None)
+bot = telebot.TeleBot(os.getenv("BOT_TOKEN"), parse_mode=None)
 
 @bot.message_handler(commands=['start', 'help'])
 def send_welcome(message):
